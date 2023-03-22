@@ -1,0 +1,12 @@
+.git
+venv
+.vscode
+medicine_back/frontend/node_modules
+
+medicine_back/frontend/__pycache__
+medicine_back/medicine_api/__pycache__
+medicine_back/medicine_back/__pycache__
+
+medicine_back/frontend/migrations/
+medicine_back/medicine_back/migrations/
+medicine_back/medicine_api/migrations/
