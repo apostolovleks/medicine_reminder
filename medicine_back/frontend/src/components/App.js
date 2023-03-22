@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import Button from '@mui/material/Button';
+import Home from "./Home";
 
 export default class App extends Component {
   constructor(props) {
@@ -8,13 +8,9 @@ export default class App extends Component {
   }
 
   render() {
-    return (
-      <div>
-      <Button variant="contained">Hello World</Button>
-    </div>
-    );
+    return <Home/>;
   }
 }
 
 const appDiv = document.getElementById("app");
-render(<App />, appDiv);
+render(<App name="Tim"/>, appDiv);
