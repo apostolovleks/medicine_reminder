@@ -1,6 +1,12 @@
-from django.urls import path, include
-from .views import ReminderView
+from rest_framework.routers import SimpleRouter
+from medicine_api import views
+
+
+
+router = SimpleRouter()
+router.register('reminder', views.ReminderView)
 
 urlpatterns = [
-    path('', ReminderView.as_view())
 ]
+
+urlpatterns += router.urls

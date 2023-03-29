@@ -1,21 +1,186 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    /* color: white; */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* color: white; */
 }
 
 #main {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 #app {
-    width: 100%;
-    height: 100%;
-    display: flex;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
 
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal__content {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+  height: 300px;
+  width: 400px;
+  position: relative;
+}
+
+.create-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.calendar-fields {
+  background: #e7ffd5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.fields {
+  position: relative;
+  width: 360px;
+  height: 40px;
+  background: #e7ffd5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.fields::placeholder {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 15px;
+}
+
+.close_button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.close_button_div {
+  position: relative;
+  cursor: pointer;
+}
+
+.column_direction {
+  display: flex;
+  flex-direction: column;
+}
+
+.size_img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.side-bar-avatar {
+  background-color: rgba(255, 255, 255, 0.984);
+  width: 200px;
+  height: 400px;
+  border: 1px solid;
+  border-color: #d2d1d1;
+  overflow: visible;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border-radius: 15px;
+}
+
+#calendar {
+  width: 1000px;
+  height: 400px;
+  --fc-border-color: #d2d1d1;
+
+  --fc-button-bg-color: #e7ffd4;
+  --fc-button-text-color: #000000;
+  --fc-button-border-color: #e7ffd4;
+  --fc-button-hover-bg-color: #bfd3ae;
+  --fc-button-hover-border-color: #bfd3ae;
+  --fc-button-active-bg-color: #bfd3ae;
+  --fc-button-active-border-color: #bfd3ae;
+}
+
+.position_element_in_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input_name {
+  position: absolute;
+  width: 135px;
+  height: 20px;
+  background-color: rgba(109, 161, 100, 1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  color: rgb(0, 0, 0);
+  border-radius: 15px;
+  padding: 10px 10px;
+}
+
+.click_me {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: rgba(231, 255, 212, 1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  color: rgb(0, 0, 0);
+  padding: 12px 24px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+}
+
+.click_me::before,
+.click_me::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: rgb(7, 7, 7);
+}
+
+.click_me::before {
+  transform: rotate(90deg);
+}
+
+.click_me::after {
+  transform: rotate(0deg);
+}
+
+.position_avatar {
+  margin-top: 20px;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import Home from "./Home";
+import Router from "./Router"
 
 export default class App extends Component {
   constructor(props) {
@@ -8,9 +8,13 @@ export default class App extends Component {
   }
 
   render() {
-    return <Home/>;
+
+    return (
+      <>
+      <Router/>
+      </>
+    );
   }
 }
-
 const appDiv = document.getElementById("app");
-render(<App name="Tim"/>, appDiv);
+render(<App />, appDiv);
