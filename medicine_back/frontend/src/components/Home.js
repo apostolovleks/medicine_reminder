@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import ReminderModal from "./ReminderModal";
 import Avatar from "./Avatar";
-import ButtonPlus from "./ButtonPlus";
 import Calendar from "./Calendar";
+import compareTimeToProperty from "../utils/compareTimeToProperty";
 
 
 export default class Home extends Component {
@@ -14,6 +14,8 @@ export default class Home extends Component {
       reminders: []
     };
   }
+  interval = null;
+
 
   async componentDidMount() {
     try {
@@ -22,9 +24,19 @@ export default class Home extends Component {
       this.setState({
         reminders
       });
+
+
+      this.interval = setInterval(() => {
+        compareTimeToProperty(this.state.reminders);
+      }, 1000 * 10);
+
     } catch (e) {
       console.log(e);
     }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
   }
 
   renderItems = () => {
@@ -43,20 +55,9 @@ export default class Home extends Component {
 
 
   deleteReminder = (reminderId) => {
-    console.log('this.state BEFORE', this.state)
-    this.setState(prevState => ({
-        reminders: prevState.reminders.filter((reminder) => reminder.id !== reminderId),
-    }));
-    this.setState({...this.state, reminders: this.state.reminders.filter((reminder) => reminder.id !== parseInt(reminderId))}, () => console.log('this.state', this.state))
-    
+    this.setState({ ...this.state, reminders: this.state.reminders.filter((reminder) => reminder.id !== parseInt(reminderId)) })
   };
 
-  // deleteReminder = (reminderId) => {
-  //   this.setState(prevState => ({
-  //     reminders: prevState.reminders.filter((reminder) => reminder.id !== reminderId),
-  //   }));
-  //   console.log(reminderId)
-  // }
 
   openModal = () => {
     this.setState({ isModalOpen: true });
@@ -72,23 +73,22 @@ export default class Home extends Component {
     return (
       <>
         <div className="side-bar-avatar">
-          <Avatar />
-          <ButtonPlus onPush={this.openModal}></ButtonPlus>
+          <Avatar
+            reminders={this.state.reminders}
+            onPushButton={this.openModal} />
         </div>
-
-        <Calendar deleteReminder={this.deleteReminder} reminders={this.state.reminders} />
+        <div id="calendar">
+          <Calendar deleteReminder={this.deleteReminder} reminders={this.state.reminders} />
+        </div>
 
         <ReminderModal
           isOpen={isModalOpen}
           onClose={this.closeModal}
           content={modalContent}
-          reminders={this.state.reminders}
+          // reminders={this.state.reminders}
           addReminder={this.addReminder}
         />
 
-
-
-        {/* <ul>{this.renderItems()}</ul> */}
         <img src='/static/images/react.jpg' className='size_img'></img>
 
       </>)

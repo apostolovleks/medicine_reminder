@@ -34,7 +34,7 @@ body {
 }
 
 .modal__content {
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: 12px;
   background-color: white;
   height: 300px;
@@ -76,6 +76,7 @@ body {
 
 .close_button {
   position: absolute;
+  padding: 10px;
   top: 0;
   right: 0;
 }
@@ -88,6 +89,8 @@ body {
 .column_direction {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  margin-top: 20px;
 }
 
 .size_img {
@@ -102,10 +105,22 @@ body {
   z-index: -1;
 }
 
+.modal img {
+  /* position: relative; */
+  /* bottom: 0;
+  left: 0; */
+  width: 100%;
+  height: auto;
+  /* background-size: cover; */
+  /* background-position: ; */
+  /* background-repeat: no-repeat; */
+  z-index: -1;
+}
+
 .side-bar-avatar {
   background-color: rgba(255, 255, 255, 0.984);
   width: 200px;
-  height: 400px;
+  height: 600px;
   border: 1px solid;
   border-color: #d2d1d1;
   overflow: visible;
@@ -116,8 +131,9 @@ body {
 }
 
 #calendar {
+  padding-top: 20px;
   width: 1000px;
-  height: 400px;
+  /* height: 400px; */
   --fc-border-color: #d2d1d1;
 
   --fc-button-bg-color: #e7ffd4;
@@ -183,4 +199,112 @@ body {
 
 .position_avatar {
   margin-top: 20px;
+}
+
+.btn-v {
+  background-color: #e7ffd5;
+  border-color: #e7ffd5;
+  border-radius: 15px;
+}
+
+.SnackbarItem-variantInfo {
+  background-color: #6da141 !important;
+}
+
+.sticker-wrapper {
+  font-size: 1em;
+  margin-top: 120px;
+}
+
+.sticker {
+  position: relative;
+  display: table;
+  width: 155px;
+  height: 155px;
+  /* padding: 1em; */
+  border-radius: 10%;
+  background: rgb(197, 246, 111);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sticker div {
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  font-size: 25px;
+}
+
+.sticker p {
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.sticker .fold {
+  content: "";
+  display: block;
+  width: 10em;
+  height: 10em;
+  position: absolute;
+  right: -6em;
+  top: -6em;
+  border-radius: 100%;
+  background: -webkit-linear-gradient(
+    -135deg,
+    transparent 11.3em,
+    #fef2a7 10em,
+    #feeda7 10em,
+    #fecba7 85%
+  );
+}
+
+.sticker.yellow {
+  background: rgb(247, 181, 106);
+  background: -webkit-linear-gradient(
+    -135deg,
+    transparent 2.82em,
+    rgb(251, 181, 100) 0,
+    rgba(250, 214, 173, 1)
+  );
+}
+
+.event-card {
+  position: relative;
+  width: 140px;
+  height: 100px;
+  background-color: #e7ffd5;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.event-card div {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+
+.event-card p {
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.event-card .time-text {
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+}
+
+.event-card .close-icon {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  cursor: pointer;
+}
+
+.event-card svg {
+  fill: currentColor;
+  width: 16px;
+  height: 16px;
 }

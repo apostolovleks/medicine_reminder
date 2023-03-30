@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import Button from '@mui/material/Button';
-import { VscChromeClose } from "react-icons/vsc";
 import axios from 'axios';
+
+import { VscChromeClose } from "react-icons/vsc";
+import { ThemeProvider } from '@mui/material/styles';
 
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import theme from "../utils/themeColors";
 import 'dayjs/locale/de';
 
 
@@ -61,7 +64,6 @@ export default class ReminderModal extends Component {
                 last_date_time: this.state.last_date_time.toDate()
             })
             .then(resp => {
-                console.log(resp);
                 this.props.addReminder(resp.data);
                 this.props.onClose();
                 this.clearFields();
@@ -98,12 +100,7 @@ export default class ReminderModal extends Component {
                             placeholder="Dose"
                             value={this.state.description}
                             onChange={this.handleInputDescription} />
-                    </div>
-
-                    <div className="create-button">
-                        <Button color="success" onClick={() => this.createReminder()} variant="contained">Create</Button>
-                    </div>
-
+                    
 
                     <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="de">
 
@@ -132,8 +129,15 @@ export default class ReminderModal extends Component {
                         />
 
                     </LocalizationProvider>
+                    </div>
+                    
 
-                    {/* {selectedDate && <p>Start Date: {selectedDate.toLocaleDateString()}</p>} */}
+                    <ThemeProvider theme={theme}>
+                        <div className="create-button">
+                            <Button color="primary" onClick={() => this.createReminder()} variant="contained">Create</Button>
+                        </div>
+                    </ThemeProvider>
+                <img src='/static/images/react.jpg'></img>
                 </div>
             </div>
         );

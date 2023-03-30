@@ -10,7 +10,7 @@ export default class ButtonPlus extends Component {
 
         return (
                 <div className='position_element_in_div'>
-                    <button className="click_me" onClick={this.props.onPush}>
+                    <button className="click_me" onClick={this.props.onPushButton}>
                         {this.props.label}
                     </button>
                 </div>
