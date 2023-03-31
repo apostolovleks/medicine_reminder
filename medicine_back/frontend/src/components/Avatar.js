@@ -10,14 +10,6 @@ export default class Avatar extends Component {
         };
     }
 
-    // componentDidMount() {
-    //     this.filterEventsByDate();
-    // }
-
-    // filterEventsByDate = () => {
-    //     // console.log('this.props.reminders', this.props);
-    //     // rest of the code
-    // }
     filterEventsByDay(events) {
         const today = new Date();
         const eventsToday = events.filter((event) => {
@@ -33,7 +25,6 @@ export default class Avatar extends Component {
 
     renderItems = (reminders) => {
         const eventsToday = this.filterEventsByDay(reminders)
-        console.log('reminders', eventsToday);
         return eventsToday.map(item => (
             <li key={item.id}>
                 {item.pill_name}
@@ -44,7 +35,6 @@ export default class Avatar extends Component {
     render() {
         const { reminders } = this.props;
         if (!reminders) return null;
-        // console.log(reminders);
 
         return (
             <>
@@ -69,13 +59,7 @@ export default class Avatar extends Component {
                         <p>
                             <ul>
                                 {this.renderItems(reminders)}
-                                {/* <li>d</li> */}
                             </ul>
-                            {/* <ul>
-                        {this.state.events.map(event => (
-                            <li key={event}>{event}</li>
-                        ))}
-                    </ul> */}
                         </p>
                         <span class="fold"></span>
                     </aside>

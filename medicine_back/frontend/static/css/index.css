@@ -3,7 +3,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  /* color: white; */
 }
 
 #main {
@@ -34,7 +33,6 @@ body {
 }
 
 .modal__content {
-  /* padding: 20px; */
   border-radius: 12px;
   background-color: white;
   height: 300px;
@@ -106,14 +104,8 @@ body {
 }
 
 .modal img {
-  /* position: relative; */
-  /* bottom: 0;
-  left: 0; */
   width: 100%;
   height: auto;
-  /* background-size: cover; */
-  /* background-position: ; */
-  /* background-repeat: no-repeat; */
   z-index: -1;
 }
 
@@ -133,9 +125,7 @@ body {
 #calendar {
   padding-top: 20px;
   width: 1000px;
-  /* height: 400px; */
   --fc-border-color: #d2d1d1;
-
   --fc-button-bg-color: #e7ffd4;
   --fc-button-text-color: #000000;
   --fc-button-border-color: #e7ffd4;
@@ -221,7 +211,6 @@ body {
   display: table;
   width: 155px;
   height: 155px;
-  /* padding: 1em; */
   border-radius: 10%;
   background: rgb(197, 246, 111);
   box-sizing: border-box;
@@ -281,7 +270,7 @@ body {
 .event-card div {
   font-weight: bold;
   margin-bottom: 5px;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .event-card p {

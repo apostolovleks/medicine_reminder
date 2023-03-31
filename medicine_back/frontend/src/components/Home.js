@@ -85,7 +85,6 @@ export default class Home extends Component {
           isOpen={isModalOpen}
           onClose={this.closeModal}
           content={modalContent}
-          // reminders={this.state.reminders}
           addReminder={this.addReminder}
         />
 

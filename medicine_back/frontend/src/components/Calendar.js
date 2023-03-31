@@ -111,9 +111,6 @@ export default class Calendar extends Component {
 
                     eventContent={this.eventContent}
                     dayHeaderContent={this.columnHeaderText}
-
-
-
                 />
             </>
         );
