@@ -101,7 +101,7 @@ export default class Calendar extends Component {
                     events={this.state.events}
                     editable={true}
                     headerToolbar={{
-                        center:"today prev,next",
+                        center: "today prev,next",
                         end: "dayGridDay,dayGridWeek,dayGridMonth"
                     }}
                     eventTimeFormat={{
